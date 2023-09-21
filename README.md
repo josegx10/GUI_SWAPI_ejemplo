@@ -6,6 +6,11 @@ Primera práctica de programación para introducción al desarrollo con MERN sta
 ---Instalar el proyecto 
 
 git clone https://github.com/josegx10/GUI_SWAPI_ejemplo.git  
+
+
+o
+
+descargalo en .zip y extraerlo
  
 ---Instalar dependencias
 
