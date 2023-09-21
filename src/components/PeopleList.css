@@ -1,0 +1,17 @@
+table {
+    margin: 10%;
+    width: 79%;
+    background-color: #ffe300;
+  }
+  th {
+    height: 50px;
+  }
+  td {
+    text-align: center;
+    background-color: white;
+    
+  }
+  tr:hover {background-color: #ffe300;}
+table, th, td {
+    border: 1px solid;
+  }

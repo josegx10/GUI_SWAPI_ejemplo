@@ -1,0 +1,35 @@
+
+.modal{
+	position: fixed;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	top: 0;
+	
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 999;
+	text-align: center;
+	width: 100%;
+	min-height: 100vh;
+	display: none;
+	justify-content: center;
+	
+}
+.modal.is-open{
+	display: flex;
+}
+.modal-pantalla{
+	background-color: #ffe300;
+	width: 39%;
+	height: 49vh;
+	margin: 10%;
+}
+.button-modal{
+	width: 100%;
+	text-align: right;
+	
+}
+.button-modal button{
+	font-size: 25px;
+	border: 0;
+	background-color: #ffe300;
+}
