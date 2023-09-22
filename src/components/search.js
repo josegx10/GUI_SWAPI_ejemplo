@@ -1,21 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./search.css";
 
 const Search = ({ setInfo, setPeople }) => {
-  var uri = "https://swapi.dev/api/people/?search=";
   const [busqueda, setBusqueda] = useState("");
-  const SearchChange = (e) => {
-    setBusqueda(e.target.value);
-    fetch(uri + e.target.value)
-      .then((response) => response.json())
-      .then((dog) => {
-        setPeople(dog?.results);
-        console.log(dog);
-        setInfo(dog);
-      });
-    console.log(e.target.value);
+
+  const useDebounce = (value, delay) => {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+      return () => {
+        clearTimeout(handler);
+      };
+    }, [value, delay]);
+
+    return debouncedValue;
   };
 
+  const debouncedquery = useDebounce(busqueda, 1000);
+
+  const SearchChange = (e) => {
+    setBusqueda(e.target.value);
+  };
+
+  useEffect(() => {
+    if (debouncedquery || debouncedquery === "") {
+      fetch(`${process.env.REACT_APP_API_URL}people/?search=${debouncedquery}`)
+        .then((response) => response.json())
+        .then((people) => {
+          setPeople(people?.results);
+          setInfo(people);
+        });
+    }
+  }, [debouncedquery]);
   return (
     <div>
       <input
