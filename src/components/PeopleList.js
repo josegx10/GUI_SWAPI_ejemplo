@@ -1,74 +1,71 @@
-import React, { useEffect, useState } from "react";
-import Sitio from "./Sitio";
+import React, { useState } from "react";
 import Modal from "./Modal";
-import './PeopleList.css';
+import "./PeopleList.css";
 
-const PeopleList = ({ city, setValidar }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [itemIndividual, setItem] = useState([]);
-    
-    
-    useEffect(() => {
-      setValidar = true;
-        
-      }, []);
+const PeopleList = ({ city }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [itemIndividual, setItem] = useState([]);
+
   return (
     <>
-    
-    <table class="default">
+      <table class="default">
+        <tr>
+          <th>Nombre</th>
 
-      <tr>
+          <th>Altura</th>
 
-        <th>Nombre</th>
+          <th>Peso</th>
 
-        <th>Altura</th>
+          <th>Color de cabello</th>
 
-        <th>Peso</th>
+          <th>Color de piel</th>
 
-        <th>Color de Cabello</th>
+          <th>Color de ojos</th>
 
-        <th>Color de piel</th>
+          <th>Fecha de nacimiento</th>
 
-        <th>Color de ojos</th>
+          <th>Genero</th>
+        </tr>
+        {city &&
+          city?.map((item) => (
+            <>
+              <tr
+                onClick={() => {
+                  setIsOpen(true);
+                  setItem(item);
+                }}
+              >
+                <td>{item?.name}</td>
 
-        <th>Fecha de nacimiento</th>
+                <td>{item?.height}</td>
 
-        <th>Genero</th>
+                <td>{item?.mass}</td>
 
-        
+                <td>{item?.hair_color}</td>
 
-      </tr>
-      {city && city?.map((item, index) => (
-        <><tr onClick={() =>  {setIsOpen(true); setItem(item)}}>
+                <td>{item?.skin_color}</td>
 
-          <td>{item?.name}</td>
+                <td>{item?.eye_color}</td>
 
-          <td>{item?.height}</td>
+                <td>{item?.birth_year}</td>
 
-          <td>{item?.mass}</td>
+                <td>{item?.gender}</td>
+              </tr>
+            </>
+          ))}
+      </table>
 
-          <td>{item?.hair_color}</td>
-
-          <td>{item?.skin_color}</td>
-
-          <td>{item?.eye_color}</td>
-
-          <td>{item?.birth_year}</td>
-
-          <td>{item?.gender}</td>
-
-          
-
-          
-
-
-        </tr></>
-      ))}
-
-
-    </table>
-
-    <div> {isOpen && <Modal setIsOpen={setIsOpen} films={itemIndividual?.films} lugar={itemIndividual?.homeworld} vehiculos={itemIndividual?.vehicles} naves={itemIndividual?.starships}/>}</div>
+      <div>
+        {isOpen && (
+          <Modal
+            setIsOpen={setIsOpen}
+            films={itemIndividual?.films}
+            lugar={itemIndividual?.homeworld}
+            vehiculos={itemIndividual?.vehicles}
+            naves={itemIndividual?.starships}
+          />
+        )}
+      </div>
     </>
   );
 };
