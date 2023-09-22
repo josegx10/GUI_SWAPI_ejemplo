@@ -16,7 +16,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,7 @@
 .my-button {
   padding: 10px 20px;
   background-color: black;
-  color:  #ffe300;
+  color: #ffe300;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -54,9 +54,11 @@
 .my-button:active {
   background-color: #ffe300;
 }
-.botones{
+.botones {
   width: 100%;
   text-align: center;
-  
-  
+}
+
+h2 {
+  color: white;
 }

@@ -1,17 +1,41 @@
 table {
-    margin: 10%;
-    width: 79%;
-    background-color: #ffe300;
+  margin: 10%;
+  width: 79%;
+  background-color: #ffe300;
+}
+th {
+  height: 50px;
+}
+td {
+  text-align: center;
+  background-color: white;
+}
+tr:hover {
+  background-color: #ffe300;
+}
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+.spinner {
+  margin: 15% 45%;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  border-left-color: #09f;
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  th {
-    height: 50px;
+
+  100% {
+    transform: rotate(360deg);
   }
-  td {
-    text-align: center;
-    background-color: white;
-    
-  }
-  tr:hover {background-color: #ffe300;}
-table, th, td {
-    border: 1px solid;
-  }
+}

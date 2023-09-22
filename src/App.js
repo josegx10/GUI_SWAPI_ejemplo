@@ -6,13 +6,14 @@ import PeopleList from "./components/PeopleList";
 function App() {
   var [people, setPeople] = useState([]);
   var [info, setInfo] = useState({});
-
+  var [loading, setLoading] = useState(true);
   const Paginacion = (uri) => {
     fetch(uri)
       .then((response) => response.json())
       .then((people) => {
         setPeople(people?.results);
         setInfo(people);
+        setLoading(false);
       });
   };
 
@@ -31,9 +32,11 @@ function App() {
 
   return (
     <>
-      <Search setPeople={setPeople} setInfo={setInfo} />
+      <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} />
 
-      <PeopleList people={people}/>
+      <PeopleList people={people} loading={loading}>
+        {" "}
+      </PeopleList>
 
       <div className="botones">
         {info.previous ? (

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./search.css";
 
-const Search = ({ setInfo, setPeople }) => {
+const Search = ({ setInfo, setPeople, setLoading }) => {
   const [busqueda, setBusqueda] = useState("");
 
   const useDebounce = (value, delay) => {
@@ -33,6 +33,7 @@ const Search = ({ setInfo, setPeople }) => {
         .then((people) => {
           setPeople(people?.results);
           setInfo(people);
+          setLoading(false)
         });
     }
   }, [debouncedquery]);
