@@ -7,7 +7,7 @@ import PeopleList from './components/PeopleList';
 
 
 function App() {
-  var uri = 'https://swapi.dev/api/people/'
+  
   var [city, setCity] = useState([]);
   var [cont, setCont] = useState({});
   var [validar, setValidar] = useState(true);
@@ -38,7 +38,7 @@ function App() {
     
   };
   useEffect(() => {
-    Paginacion(uri);
+    Paginacion(`${process.env.REACT_APP_API_URL}/people/`);
   }, []);
   
  
