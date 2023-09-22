@@ -4,25 +4,25 @@ import Search from "./components/search";
 import PeopleList from "./components/PeopleList";
 
 function App() {
-  var [city, setCity] = useState([]);
-  var [cont, setCont] = useState({});
+  var [people, setPeople] = useState([]);
+  var [info, setInfo] = useState({});
 
   const Paginacion = (uri) => {
     fetch(uri)
       .then((response) => response.json())
-      .then((dog) => {
-        setCity(dog?.results);
-        setCont(dog);
+      .then((people) => {
+        setPeople(people?.results);
+        setInfo(people);
       });
   };
 
   const handleNextPage = () => {
-    Paginacion(cont.next);
+    Paginacion(info.next);
     window.scrollTo(0, 0);
   };
 
   const handlePreviousPage = () => {
-    Paginacion(cont.previous);
+    Paginacion(info.previous);
     window.scrollTo(0, 0);
   };
   useEffect(() => {
@@ -31,17 +31,17 @@ function App() {
 
   return (
     <>
-      <Search setPeople={setCity} setCont={setCont} />
+      <Search setPeople={setPeople} setInfo={setInfo} />
 
-      <PeopleList city={city}/>
+      <PeopleList people={people}/>
 
       <div className="botones">
-        {cont.previous ? (
+        {info.previous ? (
           <button className="my-button" onClick={handlePreviousPage}>
             Previous
           </button>
         ) : null}
-        {cont.next ? (
+        {info.next ? (
           <button className="my-button" onClick={handleNextPage}>
             Next
           </button>

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import "./PeopleList.css";
 
-const PeopleList = ({ city }) => {
+const PeopleList = ({ people }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [itemIndividual, setItem] = useState([]);
+  const [item, setItem] = useState([]);
 
   return (
     <>
@@ -26,8 +26,8 @@ const PeopleList = ({ city }) => {
 
           <th>Genero</th>
         </tr>
-        {city &&
-          city?.map((item) => (
+        {people &&
+          people?.map((item) => (
             <>
               <tr
                 onClick={() => {
@@ -59,10 +59,10 @@ const PeopleList = ({ city }) => {
         {isOpen && (
           <Modal
             setIsOpen={setIsOpen}
-            films={itemIndividual?.films}
-            lugar={itemIndividual?.homeworld}
-            vehiculos={itemIndividual?.vehicles}
-            naves={itemIndividual?.starships}
+            films={item?.films}
+            place={item?.homeworld}
+            vehicles={item?.vehicles}
+            ships={item?.starships}
           />
         )}
       </div>

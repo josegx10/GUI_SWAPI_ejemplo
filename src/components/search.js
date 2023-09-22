@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./search.css";
 
-const Search = ({ setCont, setPeople }) => {
+const Search = ({ setInfo, setPeople }) => {
   var uri = "https://swapi.dev/api/people/?search=";
   const [busqueda, setBusqueda] = useState("");
   const SearchChange = (e) => {
@@ -11,7 +11,7 @@ const Search = ({ setCont, setPeople }) => {
       .then((dog) => {
         setPeople(dog?.results);
         console.log(dog);
-        setCont(dog);
+        setInfo(dog);
       });
     console.log(e.target.value);
   };

@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-const Sitio = ({ planeta }) => {
-  var [lugar, setLugar] = useState({});
+const Sitio = ({ info }) => {
+  var [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + planeta)
+    fetch(process.env.REACT_APP_API_URL + info)
       .then((response) => response.json())
-      .then((dog) => {
-        setLugar(dog);
+      .then((data) => {
+        setData(data);
       });
   }, []);
 
   return (
     <>
-      {lugar?.title}
-      {lugar?.name}
+      {data?.title}
+      {data?.name}
     </>
   );
 };

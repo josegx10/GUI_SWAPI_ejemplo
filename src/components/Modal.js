@@ -1,17 +1,17 @@
 import "./Modal.css";
 import Sitio from "./Sitio";
-const Modal = ({ setIsOpen, films, lugar, vehiculos, naves }) => {
+const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
   console.log(films);
 
   var results = [];
   results.push(
     <>
-      Planeta de nacimiento <br />
+      info de nacimiento <br />
     </>
   );
   results.push(
     <>
-      <Sitio planeta={lugar.replace(process.env.REACT_APP_API_URL, "")} />
+      <Sitio info={place.replace(process.env.REACT_APP_API_URL, "")} />
       <br />
     </>
   );
@@ -24,7 +24,7 @@ const Modal = ({ setIsOpen, films, lugar, vehiculos, naves }) => {
   films.forEach((employee) => {
     results.push(
       <>
-        <Sitio planeta={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
         <br />
       </>
     );
@@ -34,25 +34,25 @@ const Modal = ({ setIsOpen, films, lugar, vehiculos, naves }) => {
       <br /> vehiculos <br />
     </>
   );
-  vehiculos.forEach((employee) => {
+  vehicles.forEach((employee) => {
     results.push(
       <>
-        <Sitio planeta={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
         <br />
       </>
     );
   });
   results.push(
     <>
-      <br /> Naves Espaciales
+      <br /> naves Espaciales
       <br />
     </>
   );
-  naves.forEach((employee) => {
+  ships.forEach((employee) => {
     console.log(employee);
     results.push(
       <>
-        <Sitio planeta={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
         <br />
       </>
     );
