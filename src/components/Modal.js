@@ -1,7 +1,6 @@
 import "./Modal.css";
 import Sitio from "./Sitio";
 const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
-  console.log(films);
 
   var results = [];
   results.push(
@@ -21,6 +20,11 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
       <br />
     </>
   );
+  if(films.length === 0){
+    results.push(
+      <> n/a </>
+    )
+  }
   films.forEach((employee) => {
     results.push(
       <>
@@ -34,6 +38,11 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
       <br /> vehiculos <br />
     </>
   );
+  if(vehicles.length === 0){
+    results.push(
+      <> n/a </>
+    )
+  }
   vehicles.forEach((employee) => {
     results.push(
       <>
@@ -48,6 +57,11 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
       <br />
     </>
   );
+  if(ships.length === 0){
+    results.push(
+      <> n/a </>
+    )
+  }
   ships.forEach((employee) => {
     console.log(employee);
     results.push(

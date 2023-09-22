@@ -27,7 +27,7 @@ const PeopleList = ({ people, loading }) => {
 
             <th>Fecha de nacimiento</th>
 
-            <th>Genero</th>
+            <th>Género</th>
           </tr>
           {people &&
             people?.map((item) => (
@@ -38,26 +38,28 @@ const PeopleList = ({ people, loading }) => {
                     setItem(item);
                   }}
                 >
-                  <td>{item?.name}</td>
+                  <td>{item?.name === 'none' || item?.name === 'unknown' ? ( 'n/a' ): item?.name}</td>
 
-                  <td>{item?.height}</td>
+                  <td>{item?.height === 'none' ||item?.height  === 'unknown' ? ('n/a'): item?.height }</td>
 
-                  <td>{item?.mass}</td>
+                  <td>{item?.mass === 'none' ||item?.mass  === 'unknown' ? ('n/a'): item?.mass}</td>
 
-                  <td>{item?.hair_color}</td>
+                  <td>{item?.hair_color === 'none' ||item?.hair_color  === 'unknown' ? ('n/a'): item?.hair_color} </td>
 
-                  <td>{item?.skin_color}</td>
+                  <td>{item?.skin_color === 'none' ||item?.skin_color  === 'unknown' ? ('n/a'): item?.skin_color}</td>
 
-                  <td>{item?.eye_color}</td>
+                  <td>{item?.eye_color === 'none' ||item?.eye_color  === 'unknown' ? ('n/a'): item?.eye_color}</td>
 
-                  <td>{item?.birth_year}</td>
+                  <td>{item?.birth_year === 'none' ||item?.birth_year  === 'unknown' ? ('n/a'): item?.birth_year}</td>
 
-                  <td>{item?.gender}</td>
+                  <td>{item?.gender === 'none' ||item?.gender  === 'unknown' ? ('n/a'): item?.gender}</td>
                 </tr>
               </>
             ))}
+            
         </table>
       )}
+      {people.length === 0? (<h2> Sin resultados </h2>) : 'nada'}
       <div>
         {isOpen && (
           <Modal

@@ -34,9 +34,8 @@ function App() {
     <>
       <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} />
 
-      <PeopleList people={people} loading={loading}>
-        {" "}
-      </PeopleList>
+      <PeopleList people={people} loading={loading} > {setInfo?.count === 0? (<h2> Sin resultados </h2>): "Sin resultado"} </PeopleList>
+       
 
       <div className="botones">
         {info.previous ? (

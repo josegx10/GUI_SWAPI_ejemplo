@@ -33,7 +33,7 @@ const Search = ({ setInfo, setPeople, setLoading }) => {
         .then((people) => {
           setPeople(people?.results);
           setInfo(people);
-          setLoading(false)
+          setLoading(false);
         });
     }
   }, [debouncedquery]);
