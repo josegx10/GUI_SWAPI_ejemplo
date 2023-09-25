@@ -1,22 +1,29 @@
+
 import "./Modal.css";
 import Sitio from "./Sitio";
-const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
 
+const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {  
   var results = [];
+  
+ 
+
+
   results.push(
     <>
-      info de nacimiento <br />
+      Lugar de nacimiento <br />
     </>
   );
+  
   results.push(
     <>
-      <Sitio info={place.replace(process.env.REACT_APP_API_URL, "")} />
+      <Sitio info={place}/>
       <br />
     </>
   );
+ 
   results.push(
     <>
-      <br /> Pelicula
+      <br /> Películas
       <br />
     </>
   );
@@ -28,14 +35,15 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
   films.forEach((employee) => {
     results.push(
       <>
-        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee}/>
         <br />
       </>
     );
+    
   });
   results.push(
     <>
-      <br /> vehiculos <br />
+      <br /> Vehículos <br />
     </>
   );
   if(vehicles.length === 0){
@@ -46,14 +54,15 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
   vehicles.forEach((employee) => {
     results.push(
       <>
-        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee}/>
         <br />
       </>
     );
+    
   });
   results.push(
     <>
-      <br /> naves Espaciales
+      <br /> Naves espaciales
       <br />
     </>
   );
@@ -63,15 +72,15 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
     )
   }
   ships.forEach((employee) => {
-    console.log(employee);
     results.push(
       <>
-        <Sitio info={employee.replace(process.env.REACT_APP_API_URL, "")} />
+        <Sitio info={employee} />
         <br />
       </>
     );
+    
   });
-
+  
   return (
     <>
       <article className="modal is-open">
@@ -79,7 +88,6 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
           <div className="button-modal">
             <button onClick={() => setIsOpen(false)}>X</button>
           </div>
-
           {results}
         </div>
       </article>

@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-
+import './Sitio.css'
 const Sitio = ({ info }) => {
   var [data, setData] = useState({});
-
+  var [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + info)
+    fetch(info)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        setLoading(true)
       });
   }, []);
 
   return (
-    <>
-      {data?.title}
-      {data?.name}
+    <> 
+      {loading ? (
+        <>{data?.title}
+        {data?.name}</>
+      ) : (<div className="spinnerModal"></div>  )}
     </>
   );
 };
