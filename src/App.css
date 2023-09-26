@@ -65,3 +65,19 @@ h2 {
   font-size: 50px;
   width: 19%;
 }
+
+.Title {
+  /* Layout Properties */
+  top: 221px;
+  left: 90px;
+  width: 98%;
+  height: 63px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: inset 0px 3px 10px #0000000d, 5px 15px 6px #0000000d;
+  border-radius: 10px;
+  opacity: 1;
+  font-size: 30px;
+  color: #384CB4;
+  margin: 10px;
+}

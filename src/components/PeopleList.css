@@ -1,24 +1,43 @@
 table {
-  margin: 10%;
-  width: 79%;
-  background-color: #ffe300;
+  /*margin: 10%;
+  width: 79%;*/
+  width: 97%;
+  top: 426px;
+  margin: 20px;
 }
-th {
-  height: 50px;
-}
-td {
-  text-align: center;
-  background-color: white;
-}
-tr:hover {
-  background-color: #ffe300;
-}
-table,
-th,
-td {
+.cuerpoTabla{
+  width: 100%;
   border: 1px solid;
+  top: 682px;
+}
+.headerTable {
+  top: 488px;
+  left: 90px;
+  width: 100%;
+  height: 75px;
+  /* UI Properties */
+  background: #384cb4 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  opacity: 1;
 }
 
+.headerTable th {
+  /* Layout Properties */
+  top: 426px;
+  left: 139px;
+  height: 29px;
+  width: 14%;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal medium 22px/29px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+td{
+  width: 14%;
+  text-align: center;
+}
 .spinner {
   margin: 15% 45%;
   border: 4px solid rgba(0, 0, 0, 0.1);

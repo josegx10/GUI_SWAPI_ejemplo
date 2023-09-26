@@ -34,6 +34,8 @@ function App() {
     <>
       <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} />
 
+      <h1 className="Title">  Wiki Start Wars </h1>
+
       <PeopleList people={people} loading={loading} > {setInfo?.count === 0? (<h2> Sin resultados </h2>): "Sin resultado"} </PeopleList>
        
 
