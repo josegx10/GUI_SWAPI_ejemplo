@@ -1,64 +1,53 @@
-
 import "./Modal.css";
 import Sitio from "./Sitio";
 
-const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {  
+const Modal = ({ setIsOpen, films, place, vehicles, ships }) => {
   var results = [];
-  
- 
-
-
   results.push(
     <>
       Lugar de nacimiento <br />
     </>
   );
-  
+
   results.push(
     <>
-      <Sitio info={place}/>
+      <Sitio info={place} />
       <br />
     </>
   );
- 
+
   results.push(
     <>
       <br /> Películas
       <br />
     </>
   );
-  if(films.length === 0){
-    results.push(
-      <> n/a </>
-    )
+  if (films.length === 0) {
+    results.push(<> n/a </>);
   }
   films.forEach((employee) => {
     results.push(
       <>
-        <Sitio info={employee}/>
+        <Sitio info={employee} />
         <br />
       </>
     );
-    
   });
   results.push(
     <>
       <br /> Vehículos <br />
     </>
   );
-  if(vehicles.length === 0){
-    results.push(
-      <> n/a </>
-    )
+  if (vehicles.length === 0) {
+    results.push(<> n/a </>);
   }
   vehicles.forEach((employee) => {
     results.push(
       <>
-        <Sitio info={employee}/>
+        <Sitio info={employee} />
         <br />
       </>
     );
-    
   });
   results.push(
     <>
@@ -66,10 +55,8 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
       <br />
     </>
   );
-  if(ships.length === 0){
-    results.push(
-      <> n/a </>
-    )
+  if (ships.length === 0) {
+    results.push(<> n/a </>);
   }
   ships.forEach((employee) => {
     results.push(
@@ -78,9 +65,8 @@ const Modal = ({ setIsOpen, films, place, vehicles,  ships}) => {
         <br />
       </>
     );
-    
   });
-  
+
   return (
     <>
       <article className="modal is-open">

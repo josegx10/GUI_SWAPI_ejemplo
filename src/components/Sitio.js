@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './Sitio.css'
+import "./Sitio.css";
 const Sitio = ({ info }) => {
   var [data, setData] = useState({});
   var [loading, setLoading] = useState(false);
@@ -8,16 +8,20 @@ const Sitio = ({ info }) => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        setLoading(true)
+        setLoading(true);
       });
   }, []);
 
   return (
-    <> 
+    <>
       {loading ? (
-        <>{data?.title}
-        {data?.name}</>
-      ) : (<div className="spinnerModal"></div>  )}
+        <>
+          {data?.title}
+          {data?.name}
+        </>
+      ) : (
+        <div className="spinnerModal"></div>
+      )}
     </>
   );
 };
