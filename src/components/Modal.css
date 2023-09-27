@@ -1,55 +1,74 @@
+.modal {
+  position: fixed;
+  top: 0;
 
-.modal{
-	position: fixed;
-	top: 0;
-	
-	left: 0;
-	background-color: rgba(0,0,0,0.8);
-	z-index: 999;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  border-radius: 10px;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal-pantalla {
+  background-color: #ffffff;
+  width: 39%;
+  border-radius: 10px;
+  margin: 10%;
+}
+.modal-name {
+  float: left;
+  text-align: left;
+  width: 49%;
+}
+.button-modal {
+  float: right;
+  text-align: right;
+
+  width: 49%;
+}
+.button-modal button {
+  border: 0;
+  background-color: #ffffff;
+}
+
+.modal-cuadro {
+  top: 221px;
+  left: 90px;
+  width: 80%;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: inset 0px 3px 10px #0000000d, 5px 15px 6px #0000000d;
+  border-radius: 10px;
+  opacity: 1;
+  margin: 7%;
+  padding: 3%;
+}
+.modal-info {
 	text-align: center;
-	width: 100%;
-	min-height: 100vh;
-	display: none;
-	justify-content: center;
-	
-}
-.modal.is-open{
-	display: flex;
-}
-.modal-pantalla{
-	background-color: #ffe300;
-	width: 39%;
-	height: 49vh;
-	margin: 10%;
-}
-.button-modal{
-	width: 100%;
-	text-align: right;
-	
-}
-.button-modal button{
-	font-size: 25px;
-	border: 0;
-	background-color: #ffe300;
 }
 
 .spinnerModal {
-	border: 4px solid rgba(0, 0, 0, 0.1);
-	width: 1px;
-	height: 1px;
-	border-radius: 50%;
-	border-left-color: #09f;
-  
-	animation: spin 1s ease infinite;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  border-left-color: #09f;
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes spin {
-	0% {
-	  transform: rotate(0deg);
-	}
-  
-	100% {
-	  transform: rotate(360deg);
-	}
+
+  100% {
+    transform: rotate(360deg);
   }
-  
+}

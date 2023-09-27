@@ -7,7 +7,6 @@ table {
 }
 .cuerpoTabla{
   width: 100%;
-  border: 1px solid;
   top: 682px;
 }
 .headerTable {
@@ -19,13 +18,15 @@ table {
   background: #384cb4 0% 0% no-repeat padding-box;
   border-radius: 20px;
   opacity: 1;
+  
 }
-
-.headerTable th {
+.headerTable tr {
+  height: 100%;
+}
+.headerTable tr th {
   /* Layout Properties */
-  top: 426px;
-  left: 139px;
-  height: 29px;
+  
+  height: 75px;
   width: 14%;
   /* UI Properties */
   text-align: center;
@@ -33,10 +34,12 @@ table {
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
+  vertical-align: middle;
 }
 td{
   width: 14%;
   text-align: center;
+  font-size: 15px;;
 }
 .spinner {
   margin: 15% 45%;

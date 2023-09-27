@@ -110,6 +110,7 @@ const PeopleList = ({ people, loading }) => {
             place={item?.homeworld}
             vehicles={item?.vehicles}
             ships={item?.starships}
+            name={item?.name}
           />
         )}
       </div>
