@@ -22,6 +22,8 @@ function App() {
           setCont(cont +1);
         }else if(c === 2) {
           setCont(cont - 1)
+        }else {
+          setCont(1);
         }
         setEnable(true)
       });
@@ -44,7 +46,7 @@ function App() {
 
   return (
     <>
-      <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} />
+      <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} setCont={setCont}/>
 
       <div className="Title"> <h1>  Wiki Start Wars </h1></div> 
 

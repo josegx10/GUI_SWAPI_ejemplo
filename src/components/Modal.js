@@ -54,7 +54,7 @@ const Modal = ({ setIsOpen, films, place, vehicles, ships, name }) => {
   }
 
   return (
-    <>
+    <> 
       <article className="modal is-open">
         <div className="modal-pantalla">
           <div className="modal-name">{name} </div>
