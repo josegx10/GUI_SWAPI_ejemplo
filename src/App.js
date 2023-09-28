@@ -32,7 +32,7 @@ function App() {
   const handleNextPage = () => {
     Paginacion(info.next, 1);
     window.scrollTo(0, 0);
-  setEnable(false)    
+    setEnable(false)    
   };
 
   const handlePreviousPage = () => {
@@ -47,14 +47,11 @@ function App() {
   return (
     <>
       <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} setCont={setCont}/>
+      <div className="Contenido">
+        <div className="Title"> <h1>  Wiki Start Wars </h1></div> 
 
-      <div className="Title"> <h1>  Wiki Start Wars </h1></div> 
-
-      <PeopleList people={people} loading={loading} > {setInfo?.count === 0? (<h2> Sin resultados </h2>): "Sin resultado"} </PeopleList>
-       
-
-      
-     
+        <PeopleList people={people} loading={loading} > {setInfo?.count === 0? (<h2> Sin resultados </h2>): "Sin resultado"} </PeopleList>
+      </div>   
       <footer>  <div className="cont"> {people.length} de  {info?.count} personas </div> <div className="paginacion"> {info.previous ? (
           <> <button className="bottonPaginacion" onClick={handlePreviousPage} disabled={!enable}> {signoMenor} </button> <button className="bottonPaginacion" onClick={handlePreviousPage} disabled={!enable}>
           {cont - 1}

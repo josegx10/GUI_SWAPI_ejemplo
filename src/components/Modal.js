@@ -62,19 +62,19 @@ const Modal = ({ setIsOpen, films, place, vehicles, ships, name }) => {
             <button onClick={() => setIsOpen(false)}>X</button>
           </div>
           <div className="modal-cuadro">
-            Lugar de nacimiento <br />
+            Lugar de nacimiento 
             <div className="modal-info"> {resultsPlace} </div>
           </div>
           <div className="modal-cuadro">
-            Películas <br />
+            Películas
             <div className="modal-info"> {resultsFilms} </div>
           </div>
           <div className="modal-cuadro">
-            Vehículos <br />
+            Vehículos
             <div className="modal-info"> {resultsVehicles} </div>
           </div>
           <div className="modal-cuadro">
-            Naves espaciales <br />
+            Naves espaciales 
             <div className="modal-info"> {resultsShips} </div>
           </div>
         </div>

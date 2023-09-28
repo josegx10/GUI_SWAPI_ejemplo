@@ -1,11 +1,9 @@
 .modal {
   position: fixed;
   top: 0;
-
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
-  
   width: 100%;
   height: 100vh;
   display: none;
@@ -19,18 +17,20 @@
   background-color: #ffffff;
   width: 39%;
   border-radius: 10px;
-  margin: 10%;
+  margin: 7%;
+  min-height: 75vh;
 }
 .modal-name {
   float: left;
   text-align: left;
-  width: 49%;
+  width: 40%;
+  padding: 10px;
 }
 .button-modal {
   float: right;
   text-align: right;
-
-  width: 49%;
+  padding: 10px;
+  width: 40%;
 }
 .button-modal button {
   border: 0;
@@ -41,20 +41,19 @@
   top: 221px;
   left: 90px;
   width: 80%;
-  /* UI Properties */
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: inset 0px 3px 10px #0000000d, 5px 15px 6px #0000000d;
   border-radius: 10px;
   opacity: 1;
-  margin: 7%;
-  padding: 3%;
+  margin: 5% 7%;
+  padding: 2%;
 }
 .modal-info {
-	text-align: center;
+  text-align: center;
 }
 
 .spinnerModal {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 1px;
   height: 1px;
   border-radius: 50%;

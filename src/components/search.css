@@ -1,19 +1,12 @@
 .Buscador {
-  /*background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
-    background-size: 24px;
-    width: 500px;
-    border: transparent;
-    border-bottom: solid 1px #ccc;
-    padding: 10px 10px 10px 30px;
-    outline: none;
-    color: white*/
-  top: 123px;
-  left: 85px;
-  width: 97%;
+  width: 98%;
   height: 61px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+  background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png)
+    0% 15px no-repeat padding-box;
+  padding: 0px 0px 0px 30px;
   box-shadow: inset 0px 3px 10px #0000000d, 5px 15px 6px #0000000d;
   border-radius: 10px;
   opacity: 1;
-  margin: 10px;
+  margin: 20px 0;
+  border: 0;
 }
