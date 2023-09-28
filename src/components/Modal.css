@@ -1,7 +1,5 @@
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
   width: 100%;
@@ -38,8 +36,7 @@
 }
 
 .modal-cuadro {
-  top: 221px;
-  left: 90px;
+
   width: 80%;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: inset 0px 3px 10px #0000000d, 5px 15px 6px #0000000d;
