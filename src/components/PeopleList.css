@@ -1,32 +1,32 @@
-table {
-  width: 100%;
-}
-.cuerpoTabla {
-  width: 100%;
-}
 .headerTable {
-  height: 75px;
-  background: #384cb4 0% 0% no-repeat padding-box;
-  border-radius: 20px;
-  opacity: 1;
+  border-collapse: collapse;
+  width: 100%;
 }
-.headerTable tr {
-  height: 100%;
+
+.headerTable td, .headerTable th {
+  text-align: center;  
+  padding: 8px;
 }
-.headerTable tr th {
-  height: 75px;
-  width: 14%;
-  text-align: center;
-  font: normal normal medium 22px/29px Roboto;
-  letter-spacing: 0px;
-  color: #ffffff;
-  opacity: 1;
-  vertical-align: middle;
-}
-td {
-  width: 14%;
-  text-align: center;
-  font-size: 15px;
+tr th:first-child { border-top-left-radius: 20px; }
+tr th:last-child{ border-top-right-radius: 20px; }
+tr th:first-child { border-bottom-left-radius: 20px; }
+tr th:last-child { border-bottom-right-radius: 20px; }
+
+tr td:first-child { border-top-left-radius: 20px; }
+tr td:last-child{ border-top-right-radius: 20px; }
+tr td:first-child { border-bottom-left-radius: 20px; }
+tr td:last-child { border-bottom-right-radius: 20px; }
+.headerTable tr:nth-child(even){background-color:  #ddd;}
+
+.headerTable tr:hover {background-color: #f2f2f2;}
+
+.headerTable th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #384cb4 ;
+  color: white;
+  height: 25px;
+
 }
 .spinner {
   margin: 15% 45%;

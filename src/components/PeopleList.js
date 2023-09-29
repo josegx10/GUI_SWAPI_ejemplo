@@ -13,8 +13,8 @@ const PeopleList = ({ people, loading }) => {
       ) : (
         <>
           <>{people.length === 0 ? <h2> Sin resultados </h2> : ""}</>
-          <table>
-            <div className="headerTable">
+          <table className="headerTable">
+            <tbody>
               <tr>
                 <th>Nombre</th>
 
@@ -32,8 +32,7 @@ const PeopleList = ({ people, loading }) => {
 
                 <th>Género</th>
               </tr>
-            </div>
-            <div className="cuerpoTabla">
+            
             {people &&
               people?.map((item) => (
                 <>
@@ -97,7 +96,7 @@ const PeopleList = ({ people, loading }) => {
                   </tr>
                 </>
               ))}
-            </div>
+            </tbody>
           </table>
         </>
       )}

@@ -9,8 +9,8 @@ function App() {
   var [loading, setLoading] = useState(true);
   var [cont, setCont] = useState(1);
   var [enable, setEnable] = useState(true);
-  const signoMayor = '>'
-  const signoMenor = '<'
+  const signoMayor = ">";
+  const signoMenor = "<";
   const Paginacion = (uri, c) => {
     fetch(uri)
       .then((response) => response.json())
@@ -18,27 +18,27 @@ function App() {
         setPeople(people?.results);
         setInfo(people);
         setLoading(false);
-        if(c === 1){
-          setCont(cont +1);
-        }else if(c === 2) {
-          setCont(cont - 1)
-        }else {
+        if (c === 1) {
+          setCont(cont + 1);
+        } else if (c === 2) {
+          setCont(cont - 1);
+        } else {
           setCont(1);
         }
-        setEnable(true)
+        setEnable(true);
       });
   };
 
   const handleNextPage = () => {
     Paginacion(info.next, 1);
     window.scrollTo(0, 0);
-    setEnable(false)    
+    setEnable(false);
   };
 
   const handlePreviousPage = () => {
     Paginacion(info.previous, 2);
     window.scrollTo(0, 0);
-    setEnable(false)
+    setEnable(false);
   };
   useEffect(() => {
     Paginacion(`${process.env.REACT_APP_API_URL}/people/`);
@@ -46,21 +46,82 @@ function App() {
 
   return (
     <>
-      <Search setPeople={setPeople} setInfo={setInfo} setLoading={setLoading} setCont={setCont}/>
       <div className="Contenido">
-        <div className="Title"> <h1>  Wiki Start Wars </h1></div> 
+        <Search
+          setPeople={setPeople}
+          setInfo={setInfo}
+          setLoading={setLoading}
+          setCont={setCont}
+        />
 
-        <PeopleList people={people} loading={loading} > {setInfo?.count === 0? (<h2> Sin resultados </h2>): "Sin resultado"} </PeopleList>
-      </div>   
-      <footer>  <div className="cont"> {people.length} de  {info?.count} personas </div> <div className="paginacion"> {info.previous ? (
-          <> <button className="bottonPaginacion" onClick={handlePreviousPage} disabled={!enable}> {signoMenor} </button> <button className="bottonPaginacion" onClick={handlePreviousPage} disabled={!enable}>
-          {cont - 1}
-        </button></>
-        ) : null} <button className="bottonPaginacion" id="botonPrincipal"> {cont} </button>  {info.next ? (
-          <><button className="bottonPaginacion" onClick={handleNextPage} disabled={!enable}>
-            {cont + 1}
-          </button><button className="bottonPaginacion" onClick={handleNextPage} disabled={!enable}> {signoMayor} </button></>
-        ) : null} </div></footer>
+        <div className="Title">
+          {" "}
+          <h1> Wiki Start Wars </h1>
+        </div>
+
+        <PeopleList people={people} loading={loading}>
+          {" "}
+          {setInfo?.count === 0 ? (
+            <h2> Sin resultados </h2>
+          ) : (
+            "Sin resultado"
+          )}{" "}
+        </PeopleList>
+
+        <footer>
+          {" "}
+          <div className="cont">
+            {" "}
+            {people.length} de {info?.count} personas{" "}
+          </div>{" "}
+          <div className="paginacion">
+            {" "}
+            {info.previous ? (
+              <>
+                {" "}
+                <button
+                  className="bottonPaginacion"
+                  onClick={handlePreviousPage}
+                  disabled={!enable}
+                >
+                  {" "}
+                  {signoMenor}{" "}
+                </button>{" "}
+                <button
+                  className="bottonPaginacion"
+                  onClick={handlePreviousPage}
+                  disabled={!enable}
+                >
+                  {cont - 1}
+                </button>
+              </>
+            ) : null}{" "}
+            <button className="bottonPaginacion" id="botonPrincipal">
+              {" "}
+              {cont}{" "}
+            </button>{" "}
+            {info.next ? (
+              <>
+                <button
+                  className="bottonPaginacion"
+                  onClick={handleNextPage}
+                  disabled={!enable}
+                >
+                  {cont + 1}
+                </button>
+                <button
+                  className="bottonPaginacion"
+                  onClick={handleNextPage}
+                  disabled={!enable}
+                >
+                  {" "}
+                  {signoMayor}{" "}
+                </button>
+              </>
+            ) : null}{" "}
+          </div>
+        </footer>
+      </div>
     </>
   );
 }
